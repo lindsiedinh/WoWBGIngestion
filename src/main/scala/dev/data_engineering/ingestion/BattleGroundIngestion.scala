@@ -4,7 +4,7 @@ import org.apache.spark.sql.functions.{lit, when}
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 object BattleGroundIngestion {
-  val spark = SparkSession.builder().getOrCreate()
+  val spark: SparkSession = SparkSession.builder().getOrCreate()
   import spark.implicits._
 
   def main(args: Array[String]): Unit = {
