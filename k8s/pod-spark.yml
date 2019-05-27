@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-spark
+  labels:
+    name: pod-spark
+spec:
+  containers:
+    - name: pod-busybox
+      image: slehan/spark:2.4.0
+      command: ["sleep", "9999999"]
+      volumeMounts:
+        - mountPath: /wow_data
+          name: pvc-wow-bg-data
+  volumes:
+    - name: pvc-wow-bg-data
+      persistentVolumeClaim:
+        claimName: pvc-wow-bg-data
