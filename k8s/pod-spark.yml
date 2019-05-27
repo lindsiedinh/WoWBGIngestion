@@ -6,7 +6,7 @@ metadata:
     name: pod-spark
 spec:
   containers:
-    - name: pod-busybox
+    - name: pod-spark
       image: slehan/spark:2.4.0
       command: ["sleep", "9999999"]
       volumeMounts:
